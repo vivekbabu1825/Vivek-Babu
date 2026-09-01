@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   subtitle: string;
   date: string;
-  category: 'Frontend & Auth' | 'Database & Systems' | 'Web & E-Commerce';
+  category: 'IoT & Embedded Systems' | 'Data Science & ML' | 'Big Data & SQL' | 'Frontend & Auth' | 'Database & Systems' | 'Web & E-Commerce';
   description: string;
   longDescription: string;
   features: string[];
@@ -11,13 +11,13 @@ export interface Project {
   githubUrl: string;
   liveDemoAvailable?: boolean;
   metrics?: { label: string; value: string }[];
-  simulatorType?: 'login-auth' | 'school-mgmt' | 'sneaker-store';
+  simulatorType?: 'arduino-smart-classroom' | 'python-data-ml' | 'hadoop-sql-mgmt' | 'login-auth' | 'school-mgmt' | 'sneaker-store';
   codeSnippet?: string;
 }
 
 export interface SkillCategory {
   title: string;
-  categoryKey: 'languages' | 'frontend' | 'databaseTools' | 'dataCertifications' | 'softSkills';
+  categoryKey: 'languages' | 'mlBigData' | 'databaseTools' | 'coreDsa' | 'softSkills' | 'frontend' | 'dataCertifications';
   description: string;
   skills: {
     name: string;
@@ -63,9 +63,10 @@ export interface EducationItem {
 export interface Achievement {
   id: string;
   title: string;
-  category: 'Cultural & Arts' | 'Leadership & Campus' | 'Mentorship & Teaching';
+  category: 'Competitive Programming & DSA' | 'Leadership & Campus Impact' | 'Embedded IoT Innovation' | 'Technical Training' | 'Cultural & Arts' | 'Leadership & Campus' | 'Mentorship & Teaching';
   description: string;
   statNumber?: string;
   statLabel?: string;
   icon: string;
 }
+

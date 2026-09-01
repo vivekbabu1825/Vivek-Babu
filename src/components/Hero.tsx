@@ -16,7 +16,8 @@ import {
   MapPin, 
   Phone,
   Copy,
-  Check
+  Check,
+  Camera
 } from 'lucide-react';
 
 interface HeroProps {
@@ -97,27 +98,36 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 pt-1">
               
               {/* Profile Photo Card */}
-              <div className="relative shrink-0" id="hero-profile-photo-container">
-                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl p-1 bg-gradient-to-tr from-cyan-500 via-sky-400 to-indigo-600 shadow-xl shadow-cyan-500/25 transition-transform duration-300">
+              <div className="relative shrink-0 group" id="hero-profile-photo-container">
+                <a 
+                  href="#photo-showcase" 
+                  title="Click to customize or view full photo studio"
+                  className="block w-24 h-24 sm:w-28 sm:h-28 rounded-2xl p-1 bg-gradient-to-tr from-cyan-500 via-sky-400 to-indigo-600 shadow-xl shadow-cyan-500/25 transition-all duration-300 group-hover:scale-105 group-hover:shadow-cyan-500/40"
+                >
                   <div className={`w-full h-full rounded-[14px] overflow-hidden flex items-center justify-center relative ${
                     darkMode ? 'bg-slate-900' : 'bg-slate-100'
                   }`}>
                     {profilePhoto ? (
                       <img
                         src={profilePhoto}
-                        alt="Vivek Babu Profile"
+                        alt="Anshuman Choubey Profile"
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
                       />
                     ) : (
                       <div className="flex flex-col items-center justify-center p-2 text-center select-none">
                         <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-extrabold text-xl">
-                          VB
+                          AC
                         </div>
                       </div>
                     )}
+
+                    {/* Camera icon hover overlay */}
+                    <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center text-cyan-400">
+                      <Camera className="w-5 h-5" />
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
 
               {/* Main Greeting & Name */}
@@ -128,9 +138,9 @@ export const Hero: React.FC<HeroProps> = ({
                 <h1 className={`text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight ${
                   darkMode ? 'text-white' : 'text-slate-900'
                 }`}>
-                  Vivek{' '}
+                  Anshuman{' '}
                   <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500 bg-clip-text text-transparent">
-                    Babu
+                    Choubey
                   </span>
                 </h1>
                 <p className={`text-sm sm:text-base md:text-lg font-semibold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
@@ -142,7 +152,7 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Descriptive Summary */}
             <p className={`text-base sm:text-lg leading-relaxed max-w-2xl ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-              Full-Stack and Software Engineer specializing in <strong className={darkMode ? 'text-slate-200' : 'text-slate-900'}>JavaScript, Python, C/C++, HTML/CSS</strong>, and <strong className={darkMode ? 'text-slate-200' : 'text-slate-900'}>MySQL Database Architecture</strong>. Certified in Python, Big Data, and Data Science by Infosys Springboard with hackathon-winning client-side validation experience.
+              Computer Science & Engineering student specializing in <strong className={darkMode ? 'text-slate-200' : 'text-slate-900'}>Python, C, C++, SQL</strong>, and <strong className={darkMode ? 'text-slate-200' : 'text-slate-900'}>Hadoop Big Data</strong>. Creator of the Arduino-Based Smart Classroom Noise Monitoring System and certified in Data Structures, Algorithms, and Python Development.
             </p>
 
             {/* Quick Contact & Social Strip */}
@@ -248,7 +258,7 @@ export const Hero: React.FC<HeroProps> = ({
                   <span className={`text-xs font-mono font-medium ml-2 ${
                     darkMode ? 'text-slate-400' : 'text-slate-600'
                   }`}>
-                    vivek_profile.js
+                    anshuman_profile.py
                   </span>
                 </div>
 
@@ -257,7 +267,7 @@ export const Hero: React.FC<HeroProps> = ({
                   disabled={isExecuting}
                   id="terminal-run-code-btn"
                   className="flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-semibold bg-cyan-500 text-white hover:bg-cyan-400 transition-colors shadow-sm disabled:opacity-50"
-                  title="Execute JavaScript Script"
+                  title="Execute Python Script"
                 >
                   <Play className="w-3 h-3 fill-current" />
                   <span>{isExecuting ? 'Executing...' : 'Run'}</span>
@@ -266,32 +276,31 @@ export const Hero: React.FC<HeroProps> = ({
 
               {/* Code Body */}
               <div className="p-4 sm:p-5 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto">
-                <div className="text-slate-500 italic mb-2">// Developer Profile Definition</div>
+                <div className="text-slate-500 italic mb-2"># Developer Profile Definition</div>
                 <div>
-                  <span className="text-pink-400 font-semibold">const</span>{' '}
-                  <span className="text-cyan-300 font-bold">developer</span> = &#123;
+                  <span className="text-pink-400 font-semibold">class</span>{' '}
+                  <span className="text-cyan-300 font-bold">Engineer</span>:
                 </div>
                 <div className="pl-6 space-y-0.5">
                   <div>
-                    <span className="text-slate-300">name:</span> <span className="text-amber-300">"Vivek Babu"</span>,
+                    <span className="text-slate-300">name =</span> <span className="text-amber-300">"Anshuman Choubey"</span>
                   </div>
                   <div>
-                    <span className="text-slate-300">university:</span> <span className="text-amber-300">"Lovely Professional University"</span>,
+                    <span className="text-slate-300">university =</span> <span className="text-amber-300">"Lovely Professional University"</span>
                   </div>
                   <div>
-                    <span className="text-slate-300">degree:</span> <span className="text-amber-300">"B.Tech CSE (CGPA: 7.18)"</span>,
+                    <span className="text-slate-300">degree =</span> <span className="text-amber-300">"B.Tech CSE (CGPA: 6.00)"</span>
                   </div>
                   <div>
-                    <span className="text-slate-300">skills:</span> [<span className="text-emerald-300">"JavaScript"</span>, <span className="text-emerald-300">"Python"</span>, <span className="text-emerald-300">"HTML/CSS"</span>, <span className="text-emerald-300">"MySQL"</span>],
+                    <span className="text-slate-300">languages =</span> [<span className="text-emerald-300">"Python"</span>, <span className="text-emerald-300">"C"</span>, <span className="text-emerald-300">"C++"</span>, <span className="text-emerald-300">"SQL"</span>]
                   </div>
                   <div>
-                    <span className="text-slate-300">certifications:</span> [<span className="text-emerald-300">"Infosys Python"</span>, <span className="text-emerald-300">"Big Data"</span>, <span className="text-emerald-300">"Data Science"</span>],
+                    <span className="text-slate-300">big_data =</span> [<span className="text-emerald-300">"Hadoop"</span>, <span className="text-emerald-300">"Pandas"</span>, <span className="text-emerald-300">"NumPy"</span>]
                   </div>
                   <div>
-                    <span className="text-slate-300">leadership:</span> <span className="text-cyan-300">"CSE Coordinator & CDP Python Instructor (30h)"</span>
+                    <span className="text-slate-300">flagship =</span> <span className="text-cyan-300">"Arduino Smart Classroom Noise System"</span>
                   </div>
                 </div>
-                <div>&#125;;</div>
                 
                 {/* Simulated Output Box */}
                 {codeOutputVisible && (
@@ -302,13 +311,13 @@ export const Hero: React.FC<HeroProps> = ({
                   }`}>
                     <div className="flex items-center justify-between text-slate-400 text-[11px] mb-1.5 pb-1 border-b border-slate-800">
                       <span className="text-emerald-400 flex items-center gap-1">
-                        <CheckCircle2 className="w-3 h-3" /> Node.js Output: Ready
+                        <CheckCircle2 className="w-3 h-3" /> Python 3.12 Output: Ready
                       </span>
-                      <span>Execution: 0.015s</span>
+                      <span>Execution: 0.012s</span>
                     </div>
-                    <p className="text-cyan-300">💡 Focus: Building responsive, secure web platforms.</p>
+                    <p className="text-cyan-300">💡 Focus: Embedded Systems, Big Data & Python Engineering</p>
                     <p className="text-slate-300 mt-1">📍 Locations: Phagwara, Punjab / Dhanbad, Jharkhand</p>
-                    <p className="text-amber-300 mt-1">🏆 Flagship: Builtstrom Hackathon Login Validator & School Mgmt</p>
+                    <p className="text-amber-300 mt-1">🏆 Project: Smart Classroom Acoustic Monitoring & Event Coordinator (DAC)</p>
                   </div>
                 )}
               </div>
@@ -318,16 +327,16 @@ export const Hero: React.FC<HeroProps> = ({
                 darkMode ? 'bg-slate-950/50 border-slate-800/70 text-slate-400' : 'bg-slate-50 border-slate-200 text-slate-600'
               }`}>
                 <div>
-                  <div className="font-bold text-sm text-cyan-400">7.18</div>
+                  <div className="font-bold text-sm text-cyan-400">6.00</div>
                   <div className="text-[11px]">B.Tech CGPA</div>
                 </div>
                 <div className="border-x border-slate-800/40">
-                  <div className="font-bold text-sm text-indigo-400">30 Hours</div>
-                  <div className="text-[11px]">Python Teaching</div>
+                  <div className="font-bold text-sm text-indigo-400">77.00%</div>
+                  <div className="text-[11px]">Intermediate (PCM)</div>
                 </div>
                 <div>
                   <div className="font-bold text-sm text-emerald-400">3 Certs</div>
-                  <div className="text-[11px]">Infosys Accredited</div>
+                  <div className="text-[11px]">Python & DSA</div>
                 </div>
               </div>
 
@@ -348,7 +357,7 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
             <div>
               <div className={`text-xl sm:text-2xl font-extrabold ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                7.18
+                6.00
               </div>
               <div className={`text-xs font-medium ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                 B.Tech CSE CGPA (LPU)
@@ -362,10 +371,10 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
             <div>
               <div className={`text-xl sm:text-2xl font-extrabold ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                30 hrs
+                77.00%
               </div>
               <div className={`text-xs font-medium ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-                Python Mentorship (CDP)
+                Intermediate (PCM)
               </div>
             </div>
           </div>
@@ -379,7 +388,7 @@ export const Hero: React.FC<HeroProps> = ({
                 3 Certs
               </div>
               <div className={`text-xs font-medium ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-                Infosys Springboard
+                Python, C, DSA
               </div>
             </div>
           </div>
@@ -390,10 +399,10 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
             <div>
               <div className={`text-xl sm:text-2xl font-extrabold ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                1st Place
+                5+ Events
               </div>
               <div className={`text-xs font-medium ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-                Spectra '26 Gold Winner
+                DAC Coordinator
               </div>
             </div>
           </div>

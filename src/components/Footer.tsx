@@ -5,9 +5,10 @@ import { Github, Linkedin, Mail, ArrowUp, Heart } from 'lucide-react';
 interface FooterProps {
   darkMode: boolean;
   onOpenResume: () => void;
+  profilePhoto?: string | null;
 }
 
-export const Footer: React.FC<FooterProps> = ({ darkMode, onOpenResume }) => {
+export const Footer: React.FC<FooterProps> = ({ darkMode, onOpenResume, profilePhoto }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -24,9 +25,15 @@ export const Footer: React.FC<FooterProps> = ({ darkMode, onOpenResume }) => {
           
           {/* Brand & Summary */}
           <div className="flex items-center gap-3 text-center md:text-left">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow">
-              VB
-            </div>
+            {profilePhoto ? (
+              <div className="w-9 h-9 rounded-xl overflow-hidden ring-1 ring-cyan-500/50 shadow shrink-0">
+                <img src={profilePhoto} alt="Anshuman Choubey" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              </div>
+            ) : (
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow">
+                AC
+              </div>
+            )}
             <div>
               <div className={`font-bold text-sm ${darkMode ? 'text-white' : 'text-slate-900'}`}>
                 {personalInfo.name}

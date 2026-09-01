@@ -28,24 +28,24 @@ export const About: React.FC<AboutProps> = ({
 }) => {
   const pillars = [
     {
-      icon: <Code className="w-6 h-6 text-cyan-400" />,
-      title: 'Full-Stack & Web Technologies',
-      description: 'Experienced in developing responsive, accessible web interfaces using JavaScript, HTML5, CSS3, Wix AI rapid prototyping, and robust client-side validation logic.'
+      icon: <Cpu className="w-6 h-6 text-cyan-400" />,
+      title: 'Embedded Systems & IoT',
+      description: 'Engineered the Arduino-Based Smart Classroom Noise Monitoring System with dual IR sensor occupancy calculation, sound sensor acoustic calibration, and real-time 16x2 LCD display.'
     },
     {
-      icon: <Database className="w-6 h-6 text-indigo-400" />,
-      title: 'Database & Systems Architecture',
-      description: 'Solid foundation in relational MySQL schemas, SQL data modeling, data integrity, and engineering structured platforms like the School Management System.'
+      icon: <Code className="w-6 h-6 text-indigo-400" />,
+      title: 'Python, C, & C++ Core Programming',
+      description: 'Strong foundation in object-oriented programming, data structures, algorithms, exception handling, and hands-on coding exercises developed through intensive training.'
     },
     {
-      icon: <Sparkles className="w-6 h-6 text-emerald-400" />,
-      title: 'Python & Data Certifications',
-      description: 'Accredited by Infosys Springboard in Python Fundamentals, Big Data, and Data Science concepts, with strong problem-solving in C/C++ and algorithms.'
+      icon: <Database className="w-6 h-6 text-emerald-400" />,
+      title: 'Big Data & Relational Databases',
+      description: 'Hands-on knowledge of Hadoop ecosystems, structured SQL queries, MySQL database schemas, and data manipulation using Pandas and NumPy libraries.'
     },
     {
       icon: <Users className="w-6 h-6 text-purple-400" />,
-      title: 'Teaching Mentorship & Leadership',
-      description: 'Delivered 30 hours of Python programming training to Class 8 students under the Community Development Project (CDP), and active CSE Student Coordinator at LPU.'
+      title: 'Campus Leadership & Event Coordination',
+      description: 'Active coordinator with Student Organization DAC at LPU, successfully organizing 5+ campus technical and cultural events with cross-team logistics.'
     }
   ];
 
@@ -65,10 +65,10 @@ export const About: React.FC<AboutProps> = ({
             <span>About Me</span>
           </div>
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-            Crafting Scalable Web Applications & Data-Driven Logic
+            Embedded IoT, Big Data Analytics & Core Programming
           </h2>
           <p className={`mt-3 text-base sm:text-lg ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-            Get to know my academic background, technical competencies, community teaching, and university leadership.
+            Get to know my academic journey at LPU, technical skills, hands-on IoT projects, and campus coordination.
           </p>
         </div>
 
@@ -89,24 +89,24 @@ export const About: React.FC<AboutProps> = ({
                   <div className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-xl border border-slate-700 bg-slate-800/50 text-xs">
                     <img 
                       src={profilePhoto} 
-                      alt="Vivek Babu" 
+                      alt="Anshuman Choubey" 
                       className="w-6 h-6 rounded-full object-cover ring-1 ring-cyan-400"
                       referrerPolicy="no-referrer"
                     />
-                    <span className="text-slate-300 font-medium">Vivek Babu</span>
+                    <span className="text-slate-300 font-medium">Anshuman Choubey</span>
                   </div>
                 )}
               </div>
               
               <div className={`space-y-4 text-sm sm:text-base leading-relaxed ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
                 <p>
-                  I am a Computer Science & Engineering undergraduate at <strong>Lovely Professional University</strong> (Phagwara, Punjab), maintaining a strong academic record with a <strong>7.18 CGPA</strong>. My technical focus centers on full-stack web engineering, client-side application architecture, and relational database systems.
+                  I am a Computer Science & Engineering undergraduate at <strong>Lovely Professional University</strong> (Phagwara, Punjab). My focus spans embedded systems, IoT hardware-software integration, Big Data architectures, and core programming in Python, C, C++, and SQL.
                 </p>
                 <p>
-                  During the <strong>Builtstrom Hackathon</strong>, I engineered a highly responsive Login Credential interface with strict client-side regex input validation and fluid UX feedback. I have also built the <strong>School Management System</strong> with normalized MySQL schemas to organize academic administrative records, as well as modern storefront experiences utilizing Wix AI and custom frontend code.
+                  My flagship project, the <strong>Arduino-Based Smart Classroom Noise Monitoring System</strong>, integrates dual IR sensors to compute real-time room occupancy and evaluates analog sound decibel signals against a dynamically computed acoustic limit, driving physical LCD and LED feedback indicators.
                 </p>
                 <p>
-                  Committed to giving back to the community, I conducted <strong>30 hours of structured Python teaching</strong> for Class 8 students under LPU's Community Development Project (CDP), receiving an official university certificate. I actively serve as a <strong>CSE Student Coordinator</strong> and earned 1st Position in International Folk Dance at Spectra 2026.
+                  I have completed intensive <strong>Python Programming Training</strong> (Jun–Jul 2026) mastering algorithms, OOP, and data analytics with Pandas and NumPy. In addition, I have actively coordinated <strong>5+ university events with Student Organization DAC</strong> at LPU.
                 </p>
               </div>
 
@@ -116,7 +116,7 @@ export const About: React.FC<AboutProps> = ({
                   <GraduationCap className="w-4 h-4 text-cyan-400 shrink-0" />
                   <div>
                     <span className={darkMode ? 'text-slate-400' : 'text-slate-500'}>Degree: </span>
-                    <strong className={darkMode ? 'text-slate-200' : 'text-slate-800'}>B.Tech CSE (LPU, 7.18 CGPA)</strong>
+                    <strong className={darkMode ? 'text-slate-200' : 'text-slate-800'}>B.Tech CSE (LPU, CGPA: 6.00)</strong>
                   </div>
                 </div>
 
@@ -124,7 +124,7 @@ export const About: React.FC<AboutProps> = ({
                   <MapPin className="w-4 h-4 text-indigo-400 shrink-0" />
                   <div>
                     <span className={darkMode ? 'text-slate-400' : 'text-slate-500'}>Location: </span>
-                    <strong className={darkMode ? 'text-slate-200' : 'text-slate-800'}>Punjab / Jharkhand, India</strong>
+                    <strong className={darkMode ? 'text-slate-200' : 'text-slate-800'}>Punjab / Dhanbad, Jharkhand</strong>
                   </div>
                 </div>
 
@@ -160,7 +160,7 @@ export const About: React.FC<AboutProps> = ({
                     darkMode ? 'border-slate-700 text-slate-300 hover:bg-slate-800' : 'border-slate-300 text-slate-700 hover:bg-slate-100'
                   }`}
                 >
-                  Message Vivek
+                  Get in Touch
                 </a>
               </div>
             </div>

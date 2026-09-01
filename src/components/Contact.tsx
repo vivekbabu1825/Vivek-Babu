@@ -17,9 +17,10 @@ import {
 
 interface ContactProps {
   darkMode: boolean;
+  profilePhoto?: string | null;
 }
 
-export const Contact: React.FC<ContactProps> = ({ darkMode }) => {
+export const Contact: React.FC<ContactProps> = ({ darkMode, profilePhoto }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -49,7 +50,7 @@ export const Contact: React.FC<ContactProps> = ({ darkMode }) => {
       const mailtoLink = `mailto:${personalInfo.email}?subject=${encodeURIComponent(
         formData.subject || `Portfolio Inquiry from ${formData.name}`
       )}&body=${encodeURIComponent(
-        `Hi Vivek,\n\n${formData.message}\n\nFrom: ${formData.name} (${formData.email})`
+        `Hi Anshuman,\n\n${formData.message}\n\nFrom: ${formData.name} (${formData.email})`
       )}`;
       window.open(mailtoLink, '_blank');
     }, 600);
@@ -87,17 +88,28 @@ export const Contact: React.FC<ContactProps> = ({ darkMode }) => {
             <div className={`p-6 rounded-2xl border ${
               darkMode ? 'bg-slate-900/60 border-slate-800' : 'bg-slate-50 border-slate-200'
             }`}>
-              <div className="flex items-center gap-2.5 mb-2">
-                <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                </span>
-                <h3 className={`font-bold text-base ${darkMode ? 'text-white' : 'text-slate-900'}`}>
-                  Current Availability
-                </h3>
+              <div className="flex items-start justify-between gap-4 mb-3">
+                <div>
+                  <div className="flex items-center gap-2.5 mb-1">
+                    <span className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    <h3 className={`font-bold text-base ${darkMode ? 'text-white' : 'text-slate-900'}`}>
+                      Current Availability
+                    </h3>
+                  </div>
+                  <div className="text-xs font-medium text-cyan-400">Anshuman Choubey • Open to Opportunities</div>
+                </div>
+
+                {profilePhoto && (
+                  <div className="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-cyan-500/40 shrink-0 shadow-md">
+                    <img src={profilePhoto} alt="Anshuman Choubey" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  </div>
+                )}
               </div>
               <p className={`text-xs sm:text-sm leading-relaxed ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-                Actively seeking <strong>Software Engineering, Full-Stack Web Development, and Python Development internships</strong>.
+                Actively seeking <strong>Software Engineering, Python & Embedded IoT, and Data Analytics internships</strong>.
               </p>
             </div>
 

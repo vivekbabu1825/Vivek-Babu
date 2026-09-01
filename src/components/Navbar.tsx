@@ -16,6 +16,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
 
   const navLinks = [
     { name: 'About', href: '#about' },
+    { name: 'Photo Studio', href: '#photo-showcase' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
@@ -32,7 +33,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
         setIsScrolled(false);
       }
 
-      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'achievements', 'contact'];
+      const sections = ['home', 'about', 'photo-showcase', 'skills', 'projects', 'experience', 'education', 'achievements', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -82,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
               </div>
             ) : (
               <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-300">
-                VB
+                AC
               </div>
             )}
             <div className="flex flex-col">

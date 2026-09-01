@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
+import { PhotoSection } from './components/PhotoSection';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { ExperienceTimeline } from './components/ExperienceTimeline';
@@ -21,7 +22,7 @@ export default function App() {
   const [simulatorModalOpen, setSimulatorModalOpen] = useState<boolean>(false);
   const [simulatorProjectId, setSimulatorProjectId] = useState<string>('login-credential-page');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [profilePhoto] = useState<string | null>(() => getStoredPhoto());
+  const [profilePhoto, setProfilePhoto] = useState<string | null>(() => getStoredPhoto());
 
   // Sync dark class on body/html
   useEffect(() => {
@@ -66,6 +67,12 @@ export default function App() {
           profilePhoto={profilePhoto}
         />
 
+        <PhotoSection
+          darkMode={darkMode}
+          profilePhoto={profilePhoto}
+          onPhotoChange={(newPhoto) => setProfilePhoto(newPhoto)}
+        />
+
         <Skills
           darkMode={darkMode}
         />
@@ -90,6 +97,7 @@ export default function App() {
 
         <Contact
           darkMode={darkMode}
+          profilePhoto={profilePhoto}
         />
       </main>
 
@@ -97,6 +105,7 @@ export default function App() {
       <Footer
         darkMode={darkMode}
         onOpenResume={() => setResumeModalOpen(true)}
+        profilePhoto={profilePhoto}
       />
 
       {/* Resume Digital Viewer / Print Modal */}
